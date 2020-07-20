@@ -15,3 +15,5 @@ cache:
 
 script:
   - cd docker && docker-compose up --build 
+after_script:
+  - docker-compose down --remove-orphans
