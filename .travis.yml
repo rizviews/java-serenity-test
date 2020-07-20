@@ -1,0 +1,17 @@
+language: java
+branches:
+  only:
+  - master
+  - /feature/.*$/
+ 
+jdk: openjdk8
+
+services:
+  - docker
+
+cache:
+   directories:
+      - $HOME/.m2
+
+script:
+  - cd docker && docker-compose up --build 
