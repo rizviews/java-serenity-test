@@ -1,0 +1,20 @@
+version : "3.6"
+services:
+  selenium_chrome:
+    hostname: selenium_chrome
+    image: selenium/standalone-chrome:latest
+    ports:
+      - 4444:4444
+  chrome_node:
+    hostname: chrome_node
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ./target:/usr/airasia/target
+      - 'maven_repo:/root/.m2'
+    depends_on:
+    - selenium_chrome
+volumes:
+  maven_repo:
+    driver: local
