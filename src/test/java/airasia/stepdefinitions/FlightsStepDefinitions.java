@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import java.util.Map;
 
-import com.ibm.icu.impl.LocaleDisplayNamesImpl.DataTable;
+import io.cucumber.datatable.*;
 
 public class FlightsStepDefinitions {
 
@@ -32,11 +32,12 @@ public class FlightsStepDefinitions {
 
     @Then("Depart section should display proper data")
     public void depart_section_should_display_proper_data(DataTable dataTable){
+        List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);    
 
     }
     
-    @Then("should show total Price")
-    public void should_show_total_price(){
+    @Then("Total should show total Price")
+    public void total_should_show_total_Price(){
 
     }
 

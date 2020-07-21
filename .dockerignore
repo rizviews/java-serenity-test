@@ -1,0 +1,13 @@
+.git
+.gitignore
+target/
+build
+out
+.gradle
+Dockerfile*
+docker-compose*
+README.md
+LICENSE
+.vscode
+.classpath
+.travis.yml

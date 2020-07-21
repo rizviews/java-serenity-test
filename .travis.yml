@@ -4,7 +4,7 @@ branches:
   - master
   - /feature/.*$/
  
-jdk: openjdk8
+jdk: openjdk9
 
 services:
   - docker
@@ -14,6 +14,6 @@ cache:
       - $HOME/.m2
 
 script:
-  - cd docker && docker-compose up --build 
+  - cd docker && docker-compose up --build --abort-on-container-exit 
 after_script:
   - docker-compose down --remove-orphans

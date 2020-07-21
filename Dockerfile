@@ -32,6 +32,17 @@ ENV PATH $CHROMEDRIVER_DIR:$PATH
 
 RUN mkdir -p /usr/airasia/target
 WORKDIR /usr/airasia
-COPY . /usr/airasia
+
+# copy the project files
+COPY ./pom.xml ./pom.xml
+
+# build all dependencies
+RUN mvn dependency:go-offline -B
+
+# copy your other files
+COPY ./ ./
+
+# build for release
+RUN mvn clean package
 
 ENTRYPOINT ["mvn", "verify", "-Dwebdriver.remote.url=http://selenium_chrome:4444/wd/hub", "-Dwebdriver.remote.driver=chrome"]

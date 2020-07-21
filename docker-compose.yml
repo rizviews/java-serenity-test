@@ -7,9 +7,7 @@ services:
       - 4444:4444
   chrome_node:
     hostname: chrome_node
-    build:
-      context: ../
-      dockerfile: docker/Dockerfile
+    image: rizviews/serenity-bdd
     volumes:
       - ./target:/usr/airasia/target
       - 'maven_repo:/root/.m2'
