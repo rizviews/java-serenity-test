@@ -1,6 +1,6 @@
 Feature: User management
     
-    @signup-invalid
+    @test=signup-invalid
     Scenario: Sign up attempt with invalid email address
         Given I click on Signup menu
         And I enter email and password

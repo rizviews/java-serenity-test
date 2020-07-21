@@ -15,4 +15,8 @@ public class FlightsElements {
     public static By RETURN_DATE_FIELD = By.xpath("//input[@aria-label=\"Return date\"]");    
     public static By SEARCH_BUTTON = By.id("aa-web-search-button");
     public static By DEPART_HEADER = By.id("depart-return-label-desc");
+    public static By ROUTE_DESC = By.id("origin-destination-label-desc");
+    public static By DEPART_TIME = By.id("departing-time-desc-0-0");
+    public static By ARRIVAL_TIME = By.xpath("//*[@id=\"journey-line-row-0-0\"]/div[3]/div[1]/span");
+    public static By CONTINUE_BUTTON = By.id("select-bottom-booking-summary-airasia-button-inner-button-booking-summary-heatmap");
 }

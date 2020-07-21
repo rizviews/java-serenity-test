@@ -41,16 +41,13 @@ public class FlightsStepDefinitions {
     @Then("Depart section should display proper data")
     public void depart_section_should_display_proper_data(DataTable dataTable){
         List<Map<String, String>> list = dataTable.asMaps(String.class, String.class);    
-
-    }
-    
-    @Then("Total should show total Price")
-    public void total_should_show_total_Price(){
-
+        assertThat(flights.getRoute().trim()).hasToString(list.get(0).get("Route"));
+        assertThat(flights.getDepartTime()).hasToString(list.get(0).get("FlightStart"));
+        assertThat(flights.getArrivalTime()).hasToString(list.get(0).get("FlightEnd"));
     }
 
-    @Then("I should see a continue button")
+    @Then("I should not see the continue button")
     public void i_should_see_a_continue_button(){
-
+        assertThat(flights.isContinueButtonVisible()).isEqualTo(false);
     }
 }
