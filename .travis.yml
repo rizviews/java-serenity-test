@@ -14,6 +14,6 @@ cache:
       - $HOME/.m2
 
 script:
-  - cd docker && docker-compose up --build --abort-on-container-exit 
+  - docker-compose up --build --force-recreate --abort-on-container-exit 
 after_script:
   - docker-compose down --remove-orphans
