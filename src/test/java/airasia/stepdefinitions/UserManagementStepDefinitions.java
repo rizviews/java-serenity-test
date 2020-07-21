@@ -14,10 +14,7 @@ import java.util.Map;
 public class UserManagementStepDefinitions {
     
     @Steps
-    Signup signup;
-
-    //@Steps
-    //SearchResult searchResult;
+    Signup signup;    
 
     @Given("I click on Signup menu")
     public void i_click_on_signup_menu(){
