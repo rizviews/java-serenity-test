@@ -65,6 +65,10 @@ Feature: Verify flights screen and booking
 * Run `mvn clean verify` (run all tests)
 * `mvn verify -Dcucumber.options="--tags @test=flights"` (to run specific test with matching tag)
 
+### Report
+
+* During local run, please go to the root folder where the code has been cloned then go to `target/site` and open `index.html` for detail report.
+
 ### Run using docker
 
 ` docker-compose up --build --force-recreate --abort-on-container-exit`
